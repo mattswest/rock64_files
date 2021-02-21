@@ -1,0 +1,12 @@
+[Unit]
+Description=LCD Display Service
+After=network.target
+
+[Service]
+User=matt
+Group=matt
+ExecStart=/bin/bash -c /home/matt/lcd_display.sh
+Restart=always
+
+[Install]
+WantedBy=default.target
