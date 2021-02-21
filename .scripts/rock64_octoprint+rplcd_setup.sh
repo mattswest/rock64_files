@@ -1,10 +1,10 @@
 #!/bin/bash
 
 #Transfer files
-wget https://github.com/mattswest/rock64_files/tree/main/.scripts/lcd_display.sh
-wget https://github.com/mattswest/rock64_files/tree/main/.scripts/lcd_write.py
-wget https://github.com/mattswest/rock64_files/tree/main/.scripts/lcd.service
-wget https://github.com/mattswest/rock64_files/tree/main/.scripts/octoprint.service
+wget https://github.com/mattswest/rock64_files/raw/main/.scripts/lcd_display.sh
+wget https://github.com/mattswest/rock64_files/raw/main/.scripts/lcd_write.py
+wget https://github.com/mattswest/rock64_files/raw/main/.scripts/lcd.service
+wget https://github.com/mattswest/rock64_files/raw/main/.scripts/octoprint.service
 
 #Install Klipper
 #git clone https://github.com/KevinOConnor/klipper
