@@ -27,13 +27,15 @@ OctoPrint/bin/pip install "https://github.com/bchanudet/OctoPrint-Octorant/archi
 OctoPrint/bin/pip install "https://github.com/Zinc-OS/continuousprint/archive/master.zip"
 OctoPrint/bin/pip install "https://github.com/jneilliii/OctoPrint-PrusaSlicerThumbnails/archive/master.zip"
 OctoPrint/bin/pip install "https://github.com/eyal0/OctoPrint-PrintTimeGenius/archive/master.zip"
-OctoPrint/bin/pip install "https://github.com/fraschetti/Octoslack/archive/master.zip"
+OctoPrint/bin/pip install "https://github.com/jneilliii/OctoPrint-BedLevelVisualizer/archive/master.zip"
 sudo systemctl start octoprint
 
 #Install RPLCD i2c with scripts
 python3 -m pip install RPLCD
 sudo apt install i2c-tools python3-smbus python3-dev -y
 sudo usermod -aG i2c matt
+chmod +x lcd_display.sh
+chmod +x lcd_write.py
 sudo cp -v lcd.service /etc/systemd/system/
 sudo systemctl daemon-reload
 sudo systemctl enable lcd
