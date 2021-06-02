@@ -6,13 +6,7 @@ wget https://github.com/mattswest/rock64_files/raw/main/.scripts/lcd_write.py
 wget https://github.com/mattswest/rock64_files/raw/main/.scripts/lcd.service
 wget https://github.com/mattswest/rock64_files/raw/main/.scripts/octoprint.service
 
-#Install Klipper
-#git clone https://github.com/KevinOConnor/klipper
-#chmod +x install_klipper_armbian_focal.sh
-#mv ./install_klipper_armbian_focal.sh klipper/scripts
-#./klipper/scripts/install_klipper_armbian_focal.sh
-
-#Install OctoPrint + OctoKlipper with startup service
+#Install OctoPrint with startup service
 sudo apt update
 sudo apt install python3-pip virtualenv libpython3-dev -y
 virtualenv OctoPrint
@@ -22,7 +16,6 @@ sudo systemctl daemon-reload
 sudo systemctl enable octoprint
 
 #Install OctoPrint plugins
-#OctoPrint/bin/pip install "https://github.com/AliceGrey/OctoprintKlipperPlugin/archive/master.zip"
 OctoPrint/bin/pip install "https://github.com/bchanudet/OctoPrint-Octorant/archive/master.zip"
 OctoPrint/bin/pip install "https://github.com/Zinc-OS/continuousprint/archive/master.zip"
 OctoPrint/bin/pip install "https://github.com/jneilliii/OctoPrint-PrusaSlicerThumbnails/archive/master.zip"
