@@ -1,12 +1,12 @@
 #!/bin/bash
 
 #Transfer files
-scp matt@192.168.86.190:/home/matt/.scripts/install_klipper_armbian_focal.sh /home/matt
-scp matt@192.168.86.190:/home/matt/.scripts/btt_e3_titan_printer.cfg /home/matt/printer.cfg
-scp matt@192.168.86.190:/home/matt/.scripts/lcd_display.sh /home/matt
-scp matt@192.168.86.190:/home/matt/.scripts/lcd_write.py /home/matt
-scp matt@192.168.86.190:/home/matt/.scripts/lcd.service /home/matt
-scp matt@192.168.86.190:/home/matt/.scripts/octoprint.service /home/matt
+wget https://github.com/mattswest/rock64_files/raw/main/.scripts/install_klipper_armbian_focal.sh /home/matt
+wget https://github.com/mattswest/rock64_files/raw/main/.scripts/btt_e3_titan_printer.cfg /home/matt/printer.cfg
+wget https://github.com/mattswest/rock64_files/raw/main/.scripts/lcd_display.sh /home/matt
+wget https://github.com/mattswest/rock64_files/raw/main/.scripts/lcd_write.py /home/matt
+wget https://github.com/mattswest/rock64_files/raw/main/.scripts/lcd.service /home/matt
+wget https://github.com/mattswest/rock64_files/raw/main/.scripts/octoprint.service /home/matt
 
 #Install Klipper
 git clone https://github.com/KevinOConnor/klipper
