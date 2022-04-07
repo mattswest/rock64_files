@@ -1,0 +1,18 @@
+[Unit]
+Description=mjpg-streamer
+After=network.target
+
+[Service]
+Type=simple
+User=matt
+Group=matt
+ExecStart=/home/matt/mjpg_streamer.sh
+#ExecStart=/usr/local/bin/mjpg_streamer -i "input_uvc.so -d /dev/video1 -r 1920x1080" -o "output_http.so -p 8080"
+#ExecStart=/usr/local/bin/mjpg_streamer -i "input_uvc.so -d /dev/video2 -r 2560x1440" -o "output_http.so -p 8080"
+KillMode=process
+Restart=on-failure
+CPUWeight=10
+CPUQuota=40%
+
+[Install]
+WantedBy=multi-user.target
