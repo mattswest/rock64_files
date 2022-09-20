@@ -1,0 +1,11 @@
+[Unit]
+Description=NFS Share for storage pool
+
+[Mount]
+Where=/storage
+What=192.168.1.190:/storage
+Type=nfs
+TimeoutSec=6
+
+[Install]
+WantedBy=remote-fs.target
