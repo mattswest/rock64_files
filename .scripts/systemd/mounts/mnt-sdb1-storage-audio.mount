@@ -1,0 +1,11 @@
+[Unit]
+Description=NFS Share for audio
+
+[Mount]
+Where=/mnt/sdb1/storage/audio
+What=192.168.1.190:/mnt/sdb1/storage/audio
+Type=nfs
+TimeoutSec=6
+
+[Install]
+WantedBy=remote-fs.target
