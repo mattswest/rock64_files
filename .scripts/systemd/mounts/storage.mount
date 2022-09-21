@@ -1,6 +1,7 @@
 [Unit]
 Description=NFS Share for storage pool
 After=network-online.target
+Wants=network-online.target
 
 [Mount]
 Where=/storage
