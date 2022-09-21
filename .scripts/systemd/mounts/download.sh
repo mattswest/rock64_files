@@ -6,10 +6,10 @@
 cd /etc/systemd/system
 
 #Remove existing files
-rm data.mount
-rm storage.mount
-rm mnt-sdb1-storage-audio.mount
-rm mnt-sdf1-movies.mount
+rm data.mount*
+rm storage.mount*
+rm mnt-sdb1-storage-audio.mount*
+rm mnt-sdf1-movies.mount*
 
 #Download service files
 wget https://github.com/mattswest/rock64_files/raw/main/.scripts/systemd/mounts/data.mount
