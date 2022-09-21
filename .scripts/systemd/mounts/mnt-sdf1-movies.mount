@@ -1,6 +1,7 @@
 [Unit]
 Description=NFS Share for movies
 After=network-online.target
+Wants=network-online.target
 
 [Mount]
 Where=/mnt/sdf1/movies
