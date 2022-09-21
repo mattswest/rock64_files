@@ -14,10 +14,10 @@ rm mnt-sdf1-movies.mount*
 
 #Download service files
 echo "Downloading .mount files"
-wget -q https://github.com/mattswest/rock64_files/raw/main/.scripts/systemd/mounts/data.mount && echo "Downloaded data.mount" 
-wget -q https://github.com/mattswest/rock64_files/raw/main/.scripts/systemd/mounts/storage.mount && echo "Downloaded storage.mount"
-wget -q https://github.com/mattswest/rock64_files/raw/main/.scripts/systemd/mounts/mnt-sdb1-storage-audio.mount && echo "Downloaded mnt-sdb1-storage-audio.mount"
-wget -q https://github.com/mattswest/rock64_files/raw/main/.scripts/systemd/mounts/mnt-sdf1-movies.mount && echo "Downloaded mnt-sdf1-movies.mount"
+wget -q https://github.com/mattswest/rock64_files/raw/main/.scripts/systemd/mounts/data.mount && echo "  Downloaded data.mount" 
+wget -q https://github.com/mattswest/rock64_files/raw/main/.scripts/systemd/mounts/storage.mount && echo "  Downloaded storage.mount"
+wget -q https://github.com/mattswest/rock64_files/raw/main/.scripts/systemd/mounts/mnt-sdb1-storage-audio.mount && echo "  Downloaded mnt-sdb1-storage-audio.mount"
+wget -q https://github.com/mattswest/rock64_files/raw/main/.scripts/systemd/mounts/mnt-sdf1-movies.mount && echo "  Downloaded mnt-sdf1-movies.mount"
 
 #Enable service files
 echo "Enabling .mount files"
