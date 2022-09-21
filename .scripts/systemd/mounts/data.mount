@@ -1,5 +1,6 @@
 [Unit]
 Description=NFS Share for data storage
+After=network-online.target
 
 [Mount]
 Where=/data
