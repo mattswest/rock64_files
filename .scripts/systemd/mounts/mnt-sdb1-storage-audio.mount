@@ -1,6 +1,7 @@
 [Unit]
 Description=NFS Share for audio
 After=network-online.target
+Wants=network-online.target
 
 [Mount]
 Where=/mnt/sdb1/storage/audio
