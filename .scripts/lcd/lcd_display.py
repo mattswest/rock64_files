@@ -3,6 +3,7 @@
 import subprocess
 import time
 import socket
+import json
 
 
 from RPLCD.i2c import CharLCD
@@ -23,8 +24,12 @@ lcd.cursor_pos = (1,0)
 
 # Get time remaining from OctoPrint
 octoprint_output = subprocess.run(["/home/matt/OctoPrint/bin/octoprint", "client", "get", "/api/job"], stdout=subprocess.PIPE).stdout.decode("utf-8")
-time_remaining_line = [line for line in octoprint_output.split("\n") if "timeRemaining" in line][0]
-time_remaining = int(time_remaining_line.split(":")[1].split(",")[0])
+
+# parse the json output
+octoprint_output_dict = json.loads(octoprint_output)
+
+# assign the value of printTimeLeft to time_remaining
+time_remaining = octoprint_output_dict['progress']['printTimeLeft']
 
 # Calculate minutes and seconds
 minutes = time_remaining // 60
