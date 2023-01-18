@@ -23,10 +23,10 @@ lcd.cursor_pos = (1,0)
 
 # Get time remaining from OctoPrint
 octoprint_output = subprocess.run(["/home/matt/OctoPrint/bin/octoprint", "client", "get", "/api/job"], stdout=subprocess.PIPE).stdout.decode("utf-8")
-octoprint_output = '\n'.join(octoprint_output.split('\n')[1:])
+data = json.loads(octoprint_output.split('\n')[1])
 
 # parse the json output
-octoprint_output_dict = json.loads(octoprint_output)
+octoprint_output_dict = json.loads(data)
 
 # assign the value of printTimeLeft to time_remaining
 time_remaining = octoprint_output_dict['progress']['printTimeLeft']
