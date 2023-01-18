@@ -38,7 +38,7 @@ minutes = time_remaining // 60
 seconds = time_remaining % 60
 
 # Write time remaining to LCD
-lcd.cursor_pos = (1,0)
+lcd.cursor_pos = (0,1)
 lcd.write_string(f"{minutes}m {seconds}s left")
 
 # Sleep for 10 seconds
