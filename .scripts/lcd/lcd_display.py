@@ -5,21 +5,7 @@ import time
 import netifaces
 import json
 
-
 from RPLCD.i2c import CharLCD
-
-lcd = CharLCD(i2c_expander='PCF8574', address=0x3f, port=1,
-              cols=16, rows=2, dotsize=8,
-              charmap='A02',
-              auto_linebreaks=True,
-              backlight_enabled=True)
-
-# Get IP address
-ip_address = netifaces.ifaddresses('eth0')[netifaces.AF_INET][0]['addr']
-
-# Write IP address to LCD
-lcd.cursor_pos = (0,0)
-lcd.write_string(ip_address)
 
 # Get time remaining from OctoPrint
 octoprint_output = subprocess.run(["/home/matt/OctoPrint/bin/octoprint", "client", "get", "/api/job"], stdout=subprocess.PIPE).stdout.decode("utf-8")
@@ -28,8 +14,23 @@ data = json.loads(octoprint_output.split('\n')[1])
 # assign the value of printTimeLeft to time_remaining
 time_remaining = data['progress']['printTimeLeft']
 
+# Get IP address
+ip_address = netifaces.ifaddresses('eth0')[netifaces.AF_INET][0]['addr']
+
+# Initialize LCD
+lcd = CharLCD(i2c_expander='PCF8574', address=0x3f, port=1,
+              cols=16, rows=2, dotsize=8,
+              charmap='A02',
+              auto_linebreaks=True,
+              backlight_enabled=True)
+
+# Write IP address to LCD
+lcd.cursor_pos = (0,0)
+lcd.write_string(ip_address)
+
 # check if the value is None
-if time_remaining is None:
+if time_remaining == "None":
+    lcd.cursor_pos = (0,1)
     lcd.write_string("Nothing printing")
     exit()
 
