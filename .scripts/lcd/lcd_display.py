@@ -30,7 +30,7 @@ lcd.write_string(ip_address)
 
 # check if the value is None
 if not time_remaining:
-    lcd.cursor_pos = (0,1)
+    lcd.cursor_pos = (1,0)
     lcd.write_string("Nothing printing")
     exit()
 
@@ -39,7 +39,7 @@ minutes = time_remaining // 60
 seconds = time_remaining % 60
 
 # Write time remaining to LCD
-lcd.cursor_pos = (0,1)
+lcd.cursor_pos = (1,0)
 lcd.write_string(f"{minutes}m {seconds}s left")
 
 # Sleep for 10 seconds
