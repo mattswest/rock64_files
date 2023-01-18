@@ -29,7 +29,12 @@ data = json.loads(octoprint_output.split('\n')[1])
 octoprint_output_dict = json.loads(data)
 
 # assign the value of printTimeLeft to time_remaining
-time_remaining = octoprint_output_dict['progress']['printTimeLeft']
+time_remaining = data['progress']['printTimeLeft']
+
+# check if the value is None
+if time_remaining is None:
+    lcd.write_string("Nothing printing")
+    exit()
 
 # Calculate minutes and seconds
 minutes = time_remaining // 60
