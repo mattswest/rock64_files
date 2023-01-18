@@ -18,15 +18,12 @@ lcd = CharLCD(i2c_expander='PCF8574', address=0x3f, port=1,
 ip_address = netifaces.ifaddresses('eth0')[netifaces.AF_INET][0]['addr']
 
 # Write IP address to LCD
+lcd.cursor_pos = (0,0)
 lcd.write_string(ip_address)
-lcd.cursor_pos = (1,0)
 
 # Get time remaining from OctoPrint
 octoprint_output = subprocess.run(["/home/matt/OctoPrint/bin/octoprint", "client", "get", "/api/job"], stdout=subprocess.PIPE).stdout.decode("utf-8")
 data = json.loads(octoprint_output.split('\n')[1])
-
-# parse the json output
-octoprint_output_dict = json.loads(data)
 
 # assign the value of printTimeLeft to time_remaining
 time_remaining = data['progress']['printTimeLeft']
@@ -41,6 +38,7 @@ minutes = time_remaining // 60
 seconds = time_remaining % 60
 
 # Write time remaining to LCD
+lcd.cursor_pos = (1,0)
 lcd.write_string(f"{minutes}m {seconds}s left")
 
 # Sleep for 10 seconds
