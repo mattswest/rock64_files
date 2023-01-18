@@ -29,7 +29,7 @@ lcd.cursor_pos = (0,0)
 lcd.write_string(ip_address)
 
 # check if the value is None
-if time_remaining == "None":
+if not time_remaining:
     lcd.cursor_pos = (0,1)
     lcd.write_string("Nothing printing")
     exit()
