@@ -31,7 +31,7 @@ lcd.write_string(ip_address)
 # check if the value is None
 if not time_remaining:
     lcd.cursor_pos = (1,0)
-    lcd.write_string("Nothing printing")
+    lcd.write_string("Not printing")
     exit()
 
 # Calculate minutes and seconds
