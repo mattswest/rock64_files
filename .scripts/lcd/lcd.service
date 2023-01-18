@@ -5,7 +5,7 @@ After=network.target
 [Service]
 User=matt
 Group=matt
-ExecStart=/bin/bash -c /home/matt/lcd_display.py
+ExecStart=/usr/bin/python3 /home/matt/lcd_display.py
 Restart=always
 
 [Install]
